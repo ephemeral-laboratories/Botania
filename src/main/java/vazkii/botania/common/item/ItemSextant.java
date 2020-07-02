@@ -30,6 +30,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
 import vazkii.botania.api.lexicon.multiblock.Multiblock;
+import vazkii.botania.client.core.helper.I18NHelper;
 import vazkii.botania.common.Botania;
 import vazkii.botania.common.core.helper.ItemNBTHelper;
 import vazkii.botania.common.core.helper.MathHelper;
@@ -154,7 +155,7 @@ public class ItemSextant extends ItemMod {
 			int x = resolution.getScaledWidth() / 2 + 30;
 			int y = resolution.getScaledHeight() / 2;
 
-			String s = Integer.toString((int) radius);
+			String s = I18NHelper.formatInteger((int) radius);
 			boolean inRange = 0 < radius && radius <= MAX_RADIUS;
 			if (!inRange)
 				s = TextFormatting.RED + s;

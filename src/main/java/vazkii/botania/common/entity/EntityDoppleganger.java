@@ -77,6 +77,7 @@ import vazkii.botania.api.lexicon.multiblock.component.MultiblockComponent;
 import vazkii.botania.api.state.BotaniaStateProps;
 import vazkii.botania.api.state.enums.PylonVariant;
 import vazkii.botania.client.core.handler.BossBarHandler;
+import vazkii.botania.client.core.helper.I18NHelper;
 import vazkii.botania.client.core.helper.ShaderHelper;
 import vazkii.botania.common.Botania;
 import vazkii.botania.common.advancements.DopplegangerNoArmorTrigger;
@@ -962,7 +963,7 @@ public class EntityDoppleganger extends EntityLiving implements IBotaniaBoss, IE
 
 		boolean unicode = mc.fontRenderer.getUnicodeFlag();
 		mc.fontRenderer.setUnicodeFlag(true);
-		mc.fontRenderer.drawStringWithShadow("" + playerCount, px + 15, py + 4, 0xFFFFFF);
+		mc.fontRenderer.drawStringWithShadow(I18NHelper.formatInteger(playerCount), px + 15, py + 4, 0xFFFFFF);
 		mc.fontRenderer.setUnicodeFlag(unicode);
 		GlStateManager.popMatrix();
 

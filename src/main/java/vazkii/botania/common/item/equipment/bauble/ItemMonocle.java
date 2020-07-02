@@ -35,6 +35,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import vazkii.botania.api.item.IBurstViewerBauble;
 import vazkii.botania.api.item.ICosmeticAttachable;
 import vazkii.botania.api.item.ICosmeticBauble;
+import vazkii.botania.client.core.helper.I18NHelper;
 import vazkii.botania.common.lib.LibItemNames;
 
 public class ItemMonocle extends ItemBauble implements IBurstViewerBauble, ICosmeticBauble {
@@ -80,10 +81,10 @@ public class ItemMonocle extends ItemBauble implements IBurstViewerBauble, ICosm
 
 		if(block == Blocks.REDSTONE_WIRE) {
 			dispStack = new ItemStack(Items.REDSTONE);
-			text = TextFormatting.RED + "" + state.getValue(BlockRedstoneWire.POWER);
+			text = TextFormatting.RED + I18NHelper.formatInteger(state.getValue(BlockRedstoneWire.POWER));
 		} else if(block == Blocks.UNPOWERED_REPEATER || block == Blocks.POWERED_REPEATER) {
 			dispStack = new ItemStack(Items.REPEATER);
-			text = "" + state.getValue(BlockRedstoneRepeater.DELAY);
+			text = I18NHelper.formatInteger(state.getValue(BlockRedstoneRepeater.DELAY));
 		} else if(block == Blocks.UNPOWERED_COMPARATOR || block == Blocks.POWERED_COMPARATOR) {
 			dispStack = new ItemStack(Items.COMPARATOR);
 			text = state.getValue(BlockRedstoneComparator.MODE) == BlockRedstoneComparator.Mode.SUBTRACT ? "-" : "+";
