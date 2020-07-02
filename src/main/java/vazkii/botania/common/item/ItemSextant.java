@@ -35,6 +35,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 import org.lwjgl.opengl.GL11;
 
+import vazkii.botania.client.core.helper.I18NHelper;
 import vazkii.botania.client.fx.WispParticleData;
 import vazkii.botania.common.Botania;
 import vazkii.botania.common.core.helper.ItemNBTHelper;
@@ -193,7 +194,7 @@ public class ItemSextant extends Item {
 			int x = Minecraft.getInstance().getMainWindow().getScaledWidth() / 2 + 30;
 			int y = Minecraft.getInstance().getMainWindow().getScaledHeight() / 2;
 
-			String s = Integer.toString((int) radius);
+			String s = I18NHelper.formatInteger((int) radius);
 			boolean inRange = 0 < radius && radius <= MAX_RADIUS;
 			if (!inRange) {
 				s = TextFormatting.RED + s;

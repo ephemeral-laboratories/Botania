@@ -64,6 +64,7 @@ import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
 import net.minecraftforge.fml.network.NetworkHooks;
 
 import vazkii.botania.client.core.handler.BossBarHandler;
+import vazkii.botania.client.core.helper.I18NHelper;
 import vazkii.botania.client.core.helper.ShaderCallback;
 import vazkii.botania.client.core.helper.ShaderHelper;
 import vazkii.botania.client.fx.WispParticleData;
@@ -954,7 +955,7 @@ public class EntityDoppleganger extends MobEntity implements IEntityAdditionalSp
 		ItemStack stack = new ItemStack(Items.PLAYER_HEAD);
 		mc.getItemRenderer().renderItemIntoGUI(stack, px, py);
 
-		mc.fontRenderer.drawStringWithShadow("" + playerCount, px + 15, py + 4, 0xFFFFFF);
+		mc.fontRenderer.drawStringWithShadow(I18NHelper.formatInteger(playerCount), px + 15, py + 4, 0xFFFFFF);
 		RenderSystem.popMatrix();
 
 		return 5;

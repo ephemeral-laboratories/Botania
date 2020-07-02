@@ -32,6 +32,7 @@ import vazkii.botania.api.item.IBurstViewerBauble;
 import vazkii.botania.api.item.ICosmeticAttachable;
 import vazkii.botania.api.item.ICosmeticBauble;
 import vazkii.botania.client.core.handler.BaubleRenderHandler;
+import vazkii.botania.client.core.helper.I18NHelper;
 import vazkii.botania.common.core.handler.EquipmentHandler;
 
 public class ItemMonocle extends ItemBauble implements IBurstViewerBauble, ICosmeticBauble {
@@ -66,10 +67,10 @@ public class ItemMonocle extends ItemBauble implements IBurstViewerBauble, ICosm
 
 		if (block == Blocks.REDSTONE_WIRE) {
 			dispStack = new ItemStack(Items.REDSTONE);
-			text = TextFormatting.RED + "" + state.get(RedstoneWireBlock.POWER);
+			text = TextFormatting.RED + I18NHelper.formatInteger(state.get(RedstoneWireBlock.POWER));
 		} else if (block == Blocks.REPEATER) {
 			dispStack = new ItemStack(Blocks.REPEATER);
-			text = "" + state.get(RepeaterBlock.DELAY);
+			text = I18NHelper.formatInteger(state.get(RepeaterBlock.DELAY));
 		} else if (block == Blocks.COMPARATOR) {
 			dispStack = new ItemStack(Blocks.COMPARATOR);
 			text = state.get(ComparatorBlock.MODE) == ComparatorMode.SUBTRACT ? "-" : "+";

@@ -21,6 +21,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 import org.lwjgl.opengl.GL11;
 
+import vazkii.botania.client.core.helper.I18NHelper;
 import vazkii.botania.common.network.PacketHandler;
 import vazkii.botania.common.network.PacketUpdateItemsRemaining;
 
@@ -75,9 +76,9 @@ public final class ItemsRemainingRenderHandler {
 						int rem = count % max;
 
 						if (stacks == 0) {
-							text = "" + count;
+							text = I18NHelper.formatInteger(count);
 						} else {
-							text = count + " (" + TextFormatting.AQUA + stacks + TextFormatting.RESET + "*" + TextFormatting.GRAY + max + TextFormatting.RESET + "+" + TextFormatting.YELLOW + rem + TextFormatting.RESET + ")";
+							text = I18NHelper.formatInteger(count) + " (" + TextFormatting.AQUA + I18NHelper.formatInteger(stacks) + TextFormatting.RESET + "*" + TextFormatting.GRAY + I18NHelper.formatInteger(max) + TextFormatting.RESET + "+" + TextFormatting.YELLOW + I18NHelper.formatInteger(rem) + TextFormatting.RESET + ")";
 						}
 					} else if (count == -1) {
 						text = "\u221E";

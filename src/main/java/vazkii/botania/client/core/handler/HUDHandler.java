@@ -43,6 +43,7 @@ import vazkii.botania.api.mana.IManaUsingItem;
 import vazkii.botania.api.mana.ManaItemHandler;
 import vazkii.botania.api.recipe.IManaInfusionRecipe;
 import vazkii.botania.api.wand.IWandHUD;
+import vazkii.botania.client.core.helper.I18NHelper;
 import vazkii.botania.client.core.helper.RenderHelper;
 import vazkii.botania.client.lib.LibResources;
 import vazkii.botania.common.Botania;
@@ -305,7 +306,7 @@ public final class HUDHandler {
 		ItemStack target = tile.getRequestTarget();
 		if (!target.isEmpty()) {
 			String s1 = target.getDisplayName().getString();
-			String s2 = tile.getItemCount() + "x";
+			String s2 = I18NHelper.formatInteger(tile.getItemCount()) + "x";
 			int strlen = Math.max(mc.fontRenderer.getStringWidth(s1), mc.fontRenderer.getStringWidth(s2));
 			int w = mc.getMainWindow().getScaledWidth();
 			int h = mc.getMainWindow().getScaledHeight();
@@ -314,7 +315,7 @@ public final class HUDHandler {
 			AbstractGui.fill(w / 2 + 6, h / 2 - 14, w / 2 + strlen + 34, boxH + 2, 0x44000000);
 
 			mc.fontRenderer.drawStringWithShadow(s1, w / 2 + 30, h / 2 - 10, 0x6666FF);
-			mc.fontRenderer.drawStringWithShadow(tile.getItemCount() + "x", w / 2 + 30, h / 2, 0xFFFFFF);
+			mc.fontRenderer.drawStringWithShadow(s2, w / 2 + 30, h / 2, 0xFFFFFF);
 			if (tile.locked) {
 				mc.fontRenderer.drawStringWithShadow(I18n.format("botaniamisc.locked"), w / 2 + 30, h / 2 + 10, 0xFFAA00);
 			}
